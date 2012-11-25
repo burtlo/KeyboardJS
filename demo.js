@@ -6,6 +6,8 @@ $(function() {
 
 	$(document).on('keydown', updateReadout);
 	$(document).on('keyup', updateReadout);
+	
+	$demoReadout.html('Press some keys...');
 
 	function updateReadout() {
 		setTimeout(function() {
