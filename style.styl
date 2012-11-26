@@ -1,0 +1,107 @@
+@import "nib"
+
+global-reset()
+nested-reset()
+reset-html5()
+
+body
+	font-family 'Crimson Text', serif
+	min-width 960px
+	min-height 600px
+
+.header
+	position fixed
+	z-index 9999
+	top 0
+	height 40px
+	min-width 960px
+	width 100%
+	background linear-gradient(top, #333, #000)
+	border-bottom 1px solid #333
+	color white
+
+	.title,
+	.subtitle,
+	.nav
+		line-height 40px
+
+	.title,
+	.subtitle
+		float left
+
+	.title
+		font-size 26px
+		margin-left 20px
+
+		.js
+			color #ebb
+
+	.subtitle
+		font-size 16px
+		margin-left 20px
+
+	.nav
+		float right
+
+		a
+			display block
+			float left
+			color #fff
+			text-decoration none
+			margin-right 20px
+			font-size 18px
+
+			&:hover
+				color #f88
+
+.page
+	position relative
+	padding-top 40px
+	min-height 600px
+	background linear-gradient(top, #fff, #eee)
+	border-bottom 5px solid #aaa
+
+	.next
+		display block
+		position absolute
+		bottom 0
+		text-align center
+		line-height 60px
+		font-size 24px
+		width 100%
+		color #000
+		text-decoration none
+
+		&:hover
+			color #a00000
+
+.demo
+	.title,
+	.subtitle
+		text-align center
+
+	.title
+		margin 10% 0 0 0
+		line-height 76px
+		font-size 76px
+
+		.js
+			color #a00000
+
+	.subtitle
+		font-size 16px
+		line-height 16px
+		margin-top 10px
+
+	.activeKeys
+		border-radius 6px
+		margin 80px auto 0 auto
+		padding 26px
+		font-size 36px
+		line-height 36px
+		text-align center
+		white-space no-wrap
+		width 60%
+		background #000
+		color #fff
+		font-family: 'Source Code Pro', sans-serif;

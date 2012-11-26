@@ -1,13 +1,29 @@
 $(function() {
 	var $demoReadout, konami, kI = 0;
 
-	$demoReadout = $('.demoReadout');
+	$('.content').hide().fadeIn(1200);
+	$('.header, .next').hide().delay(1200).fadeIn(1200);
+
 	konami = ['up', 'up', 'down', 'down', 'left', 'right', 'left', 'right', 'b', 'a'];
 
-	$(document).on('keydown', updateReadout);
-	$(document).on('keyup', updateReadout);
+	$activeKeys = $('.activeKeys');
+	$activeKeys.html('Press some keys...');
 
-	function updateReadout() {
+	$(document).on('keydown', updateActiveKeys);
+	$(document).on('keyup', updateActiveKeys);
+
+	$(window).on('resize', resize);
+	resize();
+
+	function resize() {
+		var $page, pageHeight, pageHeightPadd;
+		$page = $('.page');
+		pageHeight = innerHeight || document.body.clientHeight;
+		pageHeightPadd = $page.outerHeight() - $page.height();
+		$page.height(pageHeight - pageHeightPadd);
+	}
+
+	function updateActiveKeys() {
 		setTimeout(function() {
 			var keys, keysString;
 
@@ -29,7 +45,7 @@ $(function() {
 			} else {
 				keysString = 'Press some keys...';
 			}
-			$demoReadout.html(keysString);
+			$activeKeys.html(keysString);
 		}, 0);
 	}
 });
